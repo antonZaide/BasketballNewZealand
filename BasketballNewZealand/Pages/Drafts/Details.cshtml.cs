@@ -28,7 +28,11 @@ namespace BasketballNewZealand.Pages.Drafts
                 return NotFound();
             }
 
-            Draft = await _context.Drafts.FirstOrDefaultAsync(m => m.DraftID == id);
+            Draft = await _context.Drafts
+                .Include(s => s.Players)
+                .ThenInclude(e => e.LastName)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.DraftID == id);
 
             if (Draft == null)
             {

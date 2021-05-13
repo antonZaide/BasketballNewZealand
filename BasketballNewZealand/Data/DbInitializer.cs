@@ -19,11 +19,11 @@ namespace BasketballNewZealand.Data
 
             var drafts = new Draft[]
             {
-                new Draft {DraftID = 1, TeamName = "Nelson Giants" },
-                new Draft {DraftID = 2, TeamName = "Wellington Saints" },
-                new Draft {DraftID = 3, TeamName = "Caterbury Rams" },
-                new Draft {DraftID = 4, TeamName = "Southland Sharks" },
-                new Draft {DraftID = 5, TeamName = "Otago Nuggets" }
+                new Draft {TeamName = "Nelson Giants" },
+                new Draft {TeamName = "Wellington Saints" },
+                new Draft {TeamName = "Caterbury Rams" },
+                new Draft {TeamName = "Southland Sharks" },
+                new Draft {TeamName = "Otago Nuggets" }
             };
 
             context.Drafts.AddRange(drafts);
@@ -31,11 +31,11 @@ namespace BasketballNewZealand.Data
 
             var positions = new Position[]
             {
-                new Position{PositionID = 1, Placement = "Point Guard"},
-                new Position{PositionID = 2, Placement = "Power Foward"},
-                new Position{PositionID = 3, Placement = "Centre"},
-                new Position{PositionID = 4, Placement = "Shooter"},
-                new Position{PositionID = 5, Placement = "Shooting Guard"}
+                new Position{Placement = "Point Guard"},
+                new Position{Placement = "Power Foward"},
+                new Position{Placement = "Centre"},
+                new Position{Placement = "Shooter"},
+                new Position{Placement = "Shooting Guard"}
             };
 
             context.Positions.AddRange(positions);

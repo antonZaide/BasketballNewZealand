@@ -32,7 +32,7 @@ namespace BasketballNewZealand.Pages.Players
 
             Player = await _context.Players
                 .Include(p => p.Draft)
-                .Include(p => p.Position).FirstOrDefaultAsync(m => m.ID == id);
+                .Include(p => p.Position).FirstOrDefaultAsync(m => m.PlayerID == id);
 
             if (Player == null)
             {
@@ -60,7 +60,7 @@ namespace BasketballNewZealand.Pages.Players
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PlayerExists(Player.ID))
+                if (!PlayerExists(Player.PlayerID))
                 {
                     return NotFound();
                 }
@@ -75,7 +75,7 @@ namespace BasketballNewZealand.Pages.Players
 
         private bool PlayerExists(int id)
         {
-            return _context.Players.Any(e => e.ID == id);
+            return _context.Players.Any(e => e.PlayerID == id);
         }
     }
 }

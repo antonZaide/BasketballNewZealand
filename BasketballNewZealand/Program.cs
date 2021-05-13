@@ -29,7 +29,7 @@ namespace BasketballNewZealand
                 try
                 {
                     var context = services.GetRequiredService<SportContext>();
-                    //context.Database.EnsureCreated();
+                   // context.Database.EnsureCreated();
                      DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)

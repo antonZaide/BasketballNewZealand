@@ -7,7 +7,7 @@ namespace BasketballNewZealand.Models
 {
     public class Player
     {
-        public int ID { get; set; }
+        public int PlayerID { get; set; }
         public int DraftID { get; set; }
         public int PositionID { get; set; }
         public string FirstName { get; set; }

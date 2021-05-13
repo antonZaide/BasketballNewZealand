@@ -21,6 +21,8 @@ namespace BasketballNewZealand.Pages.Players
 
         public IActionResult OnGet()
         {
+        ViewData["DraftID"] = new SelectList(_context.Drafts, "DraftID", "DraftID");
+        ViewData["PositionID"] = new SelectList(_context.Positions, "PositionID", "PositionID");
             return Page();
         }
 

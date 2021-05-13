@@ -14,13 +14,13 @@ namespace BasketballNewZealand.Data
         {
         }
         public DbSet<Draft> Drafts { get; set; }
-        public DbSet<Player> Players { get; set; }
         public DbSet<Position> Positions { get; set; }
+        public DbSet<Player> Players { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Position>().ToTable("Position");
             modelBuilder.Entity<Player>().ToTable("Player");
+            modelBuilder.Entity<Position>().ToTable("Position");
             modelBuilder.Entity<Draft>().ToTable("Draft");
         }
     }

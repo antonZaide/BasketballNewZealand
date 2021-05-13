@@ -29,8 +29,8 @@ namespace BasketballNewZealand
                 try
                 {
                     var context = services.GetRequiredService<SportContext>();
-                    context.Database.EnsureCreated();
-                    // DbInitializer.Initialize(context);
+                    //context.Database.EnsureCreated();
+                     DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)
                 {

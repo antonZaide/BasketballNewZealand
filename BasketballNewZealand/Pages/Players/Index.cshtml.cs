@@ -23,7 +23,9 @@ namespace BasketballNewZealand.Pages.Players
 
         public async Task OnGetAsync()
         {
-            Player = await _context.Players.ToListAsync();
+            Player = await _context.Players
+                .Include(p => p.Draft)
+                .Include(p => p.Position).ToListAsync();
         }
     }
 }

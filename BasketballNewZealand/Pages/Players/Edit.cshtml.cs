@@ -30,12 +30,16 @@ namespace BasketballNewZealand.Pages.Players
                 return NotFound();
             }
 
-            Player = await _context.Players.FirstOrDefaultAsync(m => m.ID == id);
+            Player = await _context.Players
+                .Include(p => p.Draft)
+                .Include(p => p.Position).FirstOrDefaultAsync(m => m.ID == id);
 
             if (Player == null)
             {
                 return NotFound();
             }
+           ViewData["DraftID"] = new SelectList(_context.Drafts, "DraftID", "DraftID");
+           ViewData["PositionID"] = new SelectList(_context.Positions, "PositionID", "PositionID");
             return Page();
         }
 

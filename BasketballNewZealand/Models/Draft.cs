@@ -9,6 +9,6 @@ namespace BasketballNewZealand.Models
     {
         public int DraftID { get; set; }
         public string TeamName { get; set; }
-        public Player Player { get; set; }
+        public ICollection<Player> Players { get; set; }
     }
 }
